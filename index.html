@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teen 6 - Class 7 (Future Plans & Listening)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Poppins:wght@500;700;900&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        body { font-family: 'Nunito', sans-serif; background-color: #f1f5f9; color: #0f172a; overflow-x: hidden; scroll-behavior: smooth; }
+        h1, h2, h3, h4, .font-heading { font-family: 'Poppins', sans-serif; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #e2e8f0; }
+        ::-webkit-scrollbar-thumb { background: #0891b2; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
+        .section-hidden { display: none !important; }
+        .section-enter { animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes slideUpFade { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .glass-panel { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border: 1px solid #e2e8f0; box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.08); }
+        .transition-box { background: linear-gradient(135deg, rgba(6,182,212,0.10), rgba(168,85,247,0.06)); border-left: 4px solid #06b6d4; border-radius: 10px; padding: 14px 20px; margin-bottom: 20px; display: flex; gap: 12px; align-items: flex-start; }
+        .transition-box i { color: #0891b2; font-size: 1.25rem; margin-top: 2px; }
+        .transition-box p { font-size: 0.9rem; color: #334155; line-height: 1.5; }
+        .transition-box strong { color: #0e7490; }
+
+        .fill-blank { background: white; border: 1px dashed #94a3b8; border-radius: 6px; padding: 4px 10px; color: #0e7490; font-weight: 700; outline: none; min-width: 110px; text-align: center; font-size: 13px; }
+        .fill-blank:focus { border-color: #06b6d4; border-style: solid; }
+        .fill-blank.correct { border-color: #22c55e; color: #16a34a; border-style: solid; background: #f0fdf4; }
+        .fill-blank.wrong { border-color: #f43f5e; color: #e11d48; border-style: solid; background: #fef2f2; }
+
+        .mc-option { transition: all 0.2s; cursor: pointer; border: 2px solid #cbd5e1; background: white; }
+        .mc-option:hover { border-color: #06b6d4; background: rgba(6, 182, 212, 0.06); }
+        .mc-option.correct { border-color: #22c55e; background: #dcfce7; color: #166534; }
+        .mc-option.wrong { border-color: #f43f5e; background: #fee2e2; color: #991b1b; }
+
+        .grammar-card {
+            background: white; border-radius: 20px; padding: 24px;
+            border: 3px solid #e2e8f0; box-shadow: 0 6px 20px -6px rgba(15,23,42,0.1);
+            transition: all 0.3s;
+        }
+        .grammar-card.will { border-color: #06b6d4; background: linear-gradient(135deg, #ecfeff, #ffffff); }
+        .grammar-card.going-to { border-color: #ec4899; background: linear-gradient(135deg, #fdf2f8, #ffffff); }
+
+        .tip-box { background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 10px; padding: 14px 18px; margin-bottom: 10px; }
+        .tip-box p { font-size: 0.85rem; color: #78350f; line-height: 1.5; }
+        .tip-box strong { color: #b45309; }
+
+        .help-phrase { background: #ecfeff; border: 1px solid #a5f3fc; border-radius: 8px; padding: 6px 12px; font-size: 0.8rem; color: #0e7490; font-weight: 700; display: inline-block; margin: 3px; }
+
+        .model-answer { background: #f8fafc; border-left: 4px solid #8b5cf6; border-radius: 10px; padding: 16px 20px; font-size: 0.9rem; color: #334155; line-height: 1.7; }
+        .model-answer strong { color: #7c3aed; }
+
+        .question-card { background: white; border: 2px solid #e2e8f0; border-radius: 14px; padding: 16px; margin-bottom: 12px; border-left: 5px solid #06b6d4; }
+        .question-card .q-num { background: #06b6d4; color: white; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; margin-right: 8px; }
+
+        /* Games (from class 6) */
+        .taboo-card { background: linear-gradient(135deg, #ffffff, #f8fafc); border: 3px solid #06b6d4; border-radius: 20px; padding: 24px; box-shadow: 0 10px 30px -10px rgba(6,182,212,0.3); }
+        .taboo-word { font-size: 2.5rem; font-weight: 900; color: #0e7490; text-align: center; letter-spacing: 0.02em; }
+        .taboo-forbidden { background: #fee2e2; color: #991b1b; padding: 6px 12px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; display: inline-block; margin: 3px; text-decoration: line-through; }
+
+        .bingo-cell { background: white; border: 2px solid #e2e8f0; border-radius: 10px; padding: 12px 8px; text-align: center; cursor: pointer; transition: all 0.2s; font-size: 0.75rem; font-weight: 700; color: #334155; min-height: 70px; display: flex; align-items: center; justify-content: center; position: relative; }
+        .bingo-cell:hover { border-color: #06b6d4; }
+        .bingo-cell.marked { background: #dcfce7; border-color: #22c55e; color: #166534; text-decoration: line-through; }
+        .bingo-cell.marked::after { content: '✓'; position: absolute; top: 4px; right: 6px; color: #22c55e; font-weight: 900; }
+
+        .story-die { background: white; border: 3px solid #a855f7; border-radius: 16px; padding: 18px 12px; text-align: center; box-shadow: 0 6px 20px -8px rgba(168,85,247,0.3); }
+        .story-die .die-label { font-size: 0.7rem; font-weight: 800; color: #a855f7; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+        .story-die .die-value { font-size: 1.1rem; font-weight: 800; color: #0f172a; min-height: 2.5rem; display: flex; align-items: center; justify-content: center; }
+
+        .timer-pulse { animation: pulse 1s ease-in-out infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .timer-warning { color: #f43f5e; animation: pulse 0.5s ease-in-out infinite; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col relative">
+
+    <!-- HEADER -->
+    <header class="glass-panel sticky top-0 z-40 w-full px-4 py-3 sm:px-6 lg:px-8 border-b border-slate-200 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <div class="bg-cyan-600 p-2 rounded-lg shadow-[0_0_15px_rgba(6,182,212,0.35)]">
+                <i class="fas fa-clock text-white text-xl"></i>
+            </div>
+            <div>
+                <h1 class="text-xl font-bold text-slate-900 tracking-tight">Teen 6 <span class="text-cyan-600">Virtual</span></h1>
+                <p class="text-xs text-slate-500">Class 7: Future Plans & Listening</p>
+            </div>
+        </div>
+
+        <nav class="hidden lg:flex gap-1 bg-slate-100 p-1 rounded-lg border border-slate-200">
+            <button onclick="navTo('home')" class="nav-btn px-3 py-1.5 rounded-md text-xs font-semibold bg-cyan-600 text-white transition-colors" data-target="home">Agenda</button>
+            <button onclick="navTo('warmup')" class="nav-btn px-3 py-1.5 rounded-md text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-200 transition-colors" data-target="warmup">🎧 Warm-up</button>
+            <button onclick="navTo('grammar')" class="nav-btn px-3 py-1.5 rounded-md text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-200 transition-colors" data-target="grammar">⏳ Grammar</button>
+            <button onclick="navTo('writing')" class="nav-btn px-3 py-1.5 rounded-md text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-200 transition-colors" data-target="writing">✍️ Writing</button>
+            <button onclick="navTo('listening')" class="nav-btn px-3 py-1.5 rounded-md text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-200 transition-colors" data-target="listening">🎯 Listening Test</button>
+            <button onclick="navTo('speaking')" class="nav-btn px-3 py-1.5 rounded-md text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-200 transition-colors" data-target="speaking">🎤 Speaking</button>
+            <button onclick="navTo('games')" class="nav-btn px-3 py-1.5 rounded-md text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-200 transition-colors" data-target="games">🎲 Games</button>
+        </nav>
+
+        <button class="lg:hidden text-slate-600 hover:text-slate-900" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="hidden absolute top-[72px] left-0 w-full glass-panel z-30 flex-col p-4 gap-2 border-b border-slate-200 lg:hidden shadow-2xl">
+        <button onclick="navTo('home')" class="text-left px-4 py-3 rounded-md text-sm font-semibold bg-cyan-600 text-white" data-target="home">Agenda</button>
+        <button onclick="navTo('warmup')" class="text-left px-4 py-3 rounded-md text-sm font-semibold text-slate-700 hover:bg-slate-100" data-target="warmup">🎧 Warm-up</button>
+        <button onclick="navTo('grammar')" class="text-left px-4 py-3 rounded-md text-sm font-semibold text-slate-700 hover:bg-slate-100" data-target="grammar">⏳ Grammar</button>
+        <button onclick="navTo('writing')" class="text-left px-4 py-3 rounded-md text-sm font-semibold text-slate-700 hover:bg-slate-100" data-target="writing">✍️ Writing</button>
+        <button onclick="navTo('listening')" class="text-left px-4 py-3 rounded-md text-sm font-semibold text-slate-700 hover:bg-slate-100" data-target="listening">🎯 Listening Test</button>
+        <button onclick="navTo('speaking')" class="text-left px-4 py-3 rounded-md text-sm font-semibold text-slate-700 hover:bg-slate-100" data-target="speaking">🎤 Speaking</button>
+        <button onclick="navTo('games')" class="text-left px-4 py-3 rounded-md text-sm font-semibold text-slate-700 hover:bg-slate-100" data-target="games">🎲 Games</button>
+    </div>
+
+    <main class="flex-grow flex flex-col p-4 md:p-8 relative">
+
+        <!-- ============ HOME ============ -->
+        <section id="home" class="app-section max-w-4xl mx-auto w-full section-enter">
+            <div class="text-center mb-10 mt-8">
+                <div class="inline-block bg-cyan-100 border border-cyan-300 text-cyan-700 text-xs font-bold px-4 py-1.5 rounded-full mb-4 tracking-widest">
+                    <i class="fas fa-rocket mr-1"></i> CLASS 7 · FUTURE & LISTENING
+                </div>
+                <h2 class="text-4xl md:text-6xl font-heading font-black mb-4 text-slate-900">Class 7: <span class="text-cyan-600">Future Plans</span></h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">Today we practice <em>will</em> and <em>going to</em>, sharpen our listening skills, and finish with a fun game. Let's go! 🚀</p>
+            </div>
+
+            <div class="glass-panel p-6 rounded-2xl border-l-4 border-l-cyan-500 mb-6 bg-white">
+                <h3 class="text-xl font-bold mb-4 flex items-center gap-2 text-cyan-700"><i class="fas fa-bullseye"></i> Class Objectives</h3>
+                <ul class="space-y-3 text-slate-700 text-sm">
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-cyan-600 mt-1"></i> <span>Train your ears with a quick listening warm-up.</span></li>
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-cyan-600 mt-1"></i> <span>Review <strong>will</strong> vs <strong>going to</strong> with clear rules and examples.</span></li>
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-cyan-600 mt-1"></i> <span>Practice writing about future plans with a model answer.</span></li>
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-cyan-600 mt-1"></i> <span>Complete an individual listening test.</span></li>
+                    <li class="flex items-start gap-2"><i class="fas fa-check text-cyan-600 mt-1"></i> <span>Plan a dream trip and play games!</span></li>
+                </ul>
+            </div>
+
+            <div class="glass-panel p-6 rounded-2xl border-l-4 border-l-pink-500 bg-white mb-6">
+                <h3 class="text-xl font-bold mb-4 flex items-center gap-2 text-pink-600"><i class="fas fa-list-ul"></i> Agenda (2.5 Hrs)</h3>
+                <div class="space-y-2 text-sm">
+                    <div class="flex items-center justify-between p-2 bg-slate-50 rounded-lg"><span class="font-semibold text-slate-800">🎧 1. Warm-up: Voscreen Listening</span><span class="text-xs text-cyan-700 bg-cyan-100 px-2 py-1 rounded">15 min</span></div>
+                    <div class="flex items-center justify-between p-2 bg-slate-50 rounded-lg"><span class="font-semibold text-slate-800">⏳ 2. Grammar: will vs going to</span><span class="text-xs text-cyan-700 bg-cyan-100 px-2 py-1 rounded">30 min</span></div>
+                    <div class="flex items-center justify-between p-2 bg-slate-50 rounded-lg"><span class="font-semibold text-slate-800">✍️ 3. Writing: Future Plans (Q10)</span><span class="text-xs text-cyan-700 bg-cyan-100 px-2 py-1 rounded">25 min</span></div>
+                    <div class="flex items-center justify-between p-2 bg-slate-50 rounded-lg"><span class="font-semibold text-slate-800">🎯 4. Listening Test (individual)</span><span class="text-xs text-cyan-700 bg-cyan-100 px-2 py-1 rounded">20 min</span></div>
+                    <div class="flex items-center justify-between p-2 bg-slate-50 rounded-lg"><span class="font-semibold text-slate-800">🎤 5. Speaking: Plan Your Dream Trip</span><span class="text-xs text-pink-700 bg-pink-100 px-2 py-1 rounded">20 min</span></div>
+                    <div class="flex items-center justify-between p-2 bg-slate-50 rounded-lg"><span class="font-semibold text-slate-800">🎲 6. Games Zone</span><span class="text-xs text-pink-700 bg-pink-100 px-2 py-1 rounded">20 min</span></div>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <button onclick="navTo('warmup')" class="bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-lg px-8 py-4 rounded-full shadow-[0_4px_20px_rgba(6,182,212,0.35)] transition-transform hover:scale-105">
+                    Start Class <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- ============ WARM-UP ============ -->
+        <section id="warmup" class="app-section max-w-4xl mx-auto w-full section-hidden">
+            <div class="text-center mb-6 mt-4">
+                <h2 class="text-4xl font-black text-slate-900 mb-2 tracking-wide"><i class="fas fa-headphones text-cyan-600"></i> Warm-Up: Voscreen Listening</h2>
+                <p class="text-slate-500">Let's warm up our ears with a fun listening game!</p>
+            </div>
+
+            <div class="transition-box">
+                <i class="fas fa-arrow-right"></i>
+                <p><strong>What you're about to do:</strong> You'll watch short video clips and answer quick comprehension questions. <br><strong>Why:</strong> Listening is a muscle — this warm-up gets your brain ready for the listening test later in class.</p>
+            </div>
+
+            <div class="glass-panel p-6 rounded-3xl border border-cyan-200 mb-6 bg-white">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-cyan-600 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl">🎧</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Voscreen: Listening Game</h3>
+                        <p class="text-sm text-slate-500">Real English clips · Quick questions · Instant feedback</p>
+                    </div>
+                </div>
+
+                <p class="text-slate-700 text-sm mb-4">Click the button below to open Voscreen. Watch each short clip and choose the correct answer. Try to get as many correct as you can in 10 minutes!</p>
+
+                <div class="text-center">
+                    <a href="https://www.voscreen.com/life/1014/su1oavepj3zvos8a2/en" target="_blank" class="inline-block bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-black text-lg px-8 py-4 rounded-full shadow-lg transition-transform hover:scale-105">
+                        <i class="fas fa-external-link-alt mr-2"></i> Open Voscreen
+                    </a>
+                </div>
+
+                <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
+                    <div class="bg-cyan-50 p-3 rounded-lg border border-cyan-200">
+                        <p class="font-bold text-cyan-700 mb-1">🎯 How to play</p>
+                        <p class="text-slate-600 text-xs">Watch the clip → choose the correct meaning → see if you're right!</p>
+                    </div>
+                    <div class="bg-pink-50 p-3 rounded-lg border border-pink-200">
+                        <p class="font-bold text-pink-700 mb-1">🔁 Repeat freely</p>
+                        <p class="text-slate-600 text-xs">You can replay each clip as many times as you need before answering.</p>
+                    </div>
+                    <div class="bg-amber-50 p-3 rounded-lg border border-amber-200">
+                        <p class="font-bold text-amber-700 mb-1">🏆 Challenge</p>
+                        <p class="text-slate-600 text-xs">Aim for 10 correct answers. Can you beat your own record?</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-panel p-5 rounded-2xl border border-amber-200 bg-amber-50">
+                <p class="text-sm text-slate-700"><i class="fas fa-lightbulb text-amber-500 mr-1"></i> <strong>Teacher tip:</strong> Let students play for 10-15 minutes. They can play alone or in pairs — one watches, one guesses, then swap.</p>
+            </div>
+
+            <div class="flex justify-between items-center mt-6 glass-panel px-6 py-4 rounded-xl border border-slate-200 bg-white">
+                <button onclick="navTo('home')" class="text-slate-500 hover:text-slate-900 transition-colors"><i class="fas fa-arrow-left mr-2"></i> Agenda</button>
+                <button onclick="navTo('grammar')" class="bg-cyan-600 hover:bg-cyan-500 text-white px-6 py-2 rounded-lg font-bold transition-colors">Next: Grammar <i class="fas fa-arrow-right ml-2"></i></button>
+            </div>
+        </section>
+
+        <!-- ============ GRAMMAR ============ -->
+        <section id="grammar" class="app-section max-w-5xl mx-auto w-full section-hidden">
+            <div class="text-center mb-6 mt-4">
+                <h2 class="text-4xl font-black text-slate-900 mb-2 tracking-wide"><i class="fas fa-clock text-cyan-600"></i> Grammar: Will vs Going To</h2>
+                <p class="text-slate-500">Two ways to talk about the future — when do we use each?</p>
+            </div>
+
+            <div class="transition-box">
+                <i class="fas fa-arrow-right"></i>
+                <p><strong>What you're about to do:</strong> Review the two most common future forms in English with summary cards, then complete practice exercises and a pair activity.<br><strong>Why:</strong> Knowing WHEN to use <em>will</em> vs <em>going to</em> is essential for natural English.</p>
+            </div>
+
+            <!-- TWO SUMMARY CARDS -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+
+                <!-- WILL CARD -->
+                <div class="grammar-card will">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-cyan-600 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-lg">W</div>
+                        <h3 class="text-2xl font-bold text-cyan-700">WILL</h3>
+                    </div>
+
+                    <p class="text-xs font-bold text-cyan-600 uppercase tracking-wider mb-2">📌 Use it for...</p>
+                    <ul class="space-y-2 text-sm text-slate-700 mb-4">
+                        <li>✅ <strong>Instant decisions</strong> — made at the moment of speaking.</li>
+                        <li>✅ <strong>Predictions</strong> — based on opinion or belief (no evidence).</li>
+                        <li>✅ <strong>Promises & offers</strong> — helping, agreeing, refusing.</li>
+                        <li>✅ <strong>Facts about the future</strong> — things we can't control.</li>
+                    </ul>
+
+                    <p class="text-xs font-bold text-cyan-600 uppercase tracking-wider mb-2">🔧 Structure</p>
+                    <div class="bg-white/70 rounded-lg p-3 mb-3 text-sm">
+                        <p class="text-slate-700"><strong class="text-cyan-700">+</strong> Subject + <span class="text-cyan-700 font-bold">will</span> + verb<br>
+                        <em>I <strong class="text-cyan-700">will help</strong> you.</em></p>
+                        <p class="text-slate-700 mt-1"><strong class="text-cyan-700">−</strong> Subject + <span class="text-cyan-700 font-bold">won't</span> + verb<br>
+                        <em>She <strong class="text-cyan-700">won't come</strong>.</em></p>
+                        <p class="text-slate-700 mt-1"><strong class="text-cyan-700">?</strong> <span class="text-cyan-700 font-bold">Will</span> + subject + verb?<br>
+                        <em><strong class="text-cyan-700">Will</strong> you help me?</em></p>
+                    </div>
+
+                    <p class="text-xs font-bold text-cyan-600 uppercase tracking-wider mb-2">💬 Sample sentences</p>
+                    <div class="space-y-1 text-sm text-slate-700">
+                        <p>🔹 <em>"The phone is ringing. — I<strong>'ll get</strong> it!"</em> <span class="text-xs text-slate-400">(instant decision)</span></p>
+                        <p>🔹 <em>"I think it <strong>will rain</strong> tomorrow."</em> <span class="text-xs text-slate-400">(prediction)</span></p>
+                        <p>🔹 <em>"I <strong>will always love</strong> you."</em> <span class="text-xs text-slate-400">(promise)</span></p>
+                        <p>🔹 <em>"Don't worry — everything <strong>will be</strong> fine."</em> <span class="text-xs text-slate-400">(reassurance)</span></p>
+                    </div>
+                </div>
+
+                <!-- GOING TO CARD -->
+                <div class="grammar-card going-to">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-pink-500 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-lg">G</div>
+                        <h3 class="text-2xl font-bold text-pink-700">GOING TO</h3>
+                    </div>
+
+                    <p class="text-xs font-bold text-pink-600 uppercase tracking-wider mb-2">📌 Use it for...</p>
+                    <ul class="space-y-2 text-sm text-slate-700 mb-4">
+                        <li>✅ <strong>Plans & intentions</strong> — decided before speaking.</li>
+                        <li>✅ <strong>Predictions based on evidence</strong> — we can SEE it coming.</li>
+                        <li>✅ <strong>Arrangements</strong> — things already organized.</li>
+                    </ul>
+
+                    <p class="text-xs font-bold text-pink-600 uppercase tracking-wider mb-2">🔧 Structure</p>
+                    <div class="bg-white/70 rounded-lg p-3 mb-3 text-sm">
+                        <p class="text-slate-700"><strong class="text-pink-700">+</strong> Subject + am/is/are + <span class="text-pink-700 font-bold">going to</span> + verb<br>
+                        <em>I<strong class="text-pink-700">'m going to study</strong> tonight.</em></p>
+                        <p class="text-slate-700 mt-1"><strong class="text-pink-700">−</strong> Subject + am/is/are + <span class="text-pink-700 font-bold">not going to</span> + verb<br>
+                        <em>They <strong class="text-pink-700">aren't going to travel</strong>.</em></p>
+                        <p class="text-slate-700 mt-1"><strong class="text-pink-700">?</strong> Am/Is/Are + subject + <span class="text-pink-700 font-bold">going to</span> + verb?<br>
+                        <em><strong class="text-pink-700">Are</strong> you <strong class="text-pink-700">going to come</strong>?</em></p>
+                    </div>
+
+                    <p class="text-xs font-bold text-pink-600 uppercase tracking-wider mb-2">💬 Sample sentences</p>
+                    <div class="space-y-1 text-sm text-slate-700">
+                        <p>🔹 <em>"I<strong>'m going to visit</strong> Japan next summer."</em> <span class="text-xs text-slate-400">(plan)</span></p>
+                        <p>🔹 <em>"Look at those clouds! It<strong>'s going to rain</strong>."</em> <span class="text-xs text-slate-400">(evidence)</span></p>
+                        <p>🔹 <em>"We<strong>'re going to have</strong> a party on Saturday."</em> <span class="text-xs text-slate-400">(arrangement)</span></p>
+                        <p>🔹 <em>"She<strong>'s not going to accept</strong> that offer."</em> <span class="text-xs text-slate-400">(intention)</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QUICK COMPARISON -->
+            <div class="glass-panel p-5 rounded-2xl border border-slate-200 bg-white mb-8">
+                <h3 class="text-lg font-bold text-slate-900 mb-3"><i class="fas fa-arrows-alt-h text-purple-600 mr-2"></i>Quick Comparison</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100">
+                                <th class="p-3 text-left text-slate-700 font-bold">Situation</th>
+                                <th class="p-3 text-left text-cyan-700 font-bold">WILL</th>
+                                <th class="p-3 text-left text-pink-700 font-bold">GOING TO</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200">
+                            <tr><td class="p-3 text-slate-600">Phone rings</td><td class="p-3 text-slate-700"><em>"I'll get it!"</em></td><td class="p-3 text-slate-400">—</td></tr>
+                            <tr><td class="p-3 text-slate-600">Cloudy sky</td><td class="p-3 text-slate-400">—</td><td class="p-3 text-slate-700"><em>"It's going to rain."</em></td></tr>
+                            <tr><td class="p-3 text-slate-600">Holiday already booked</td><td class="p-3 text-slate-400">—</td><td class="p-3 text-slate-700"><em>"We're going to fly to Rome."</em></td></tr>
+                            <tr><td class="p-3 text-slate-600">Prediction (opinion)</td><td class="p-3 text-slate-700"><em>"I think she'll win."</em></td><td class="p-3 text-slate-400">—</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- EXERCISES -->
+            <div class="glass-panel p-6 rounded-3xl border border-slate-200 mb-6 bg-white">
+                <h3 class="text-xl font-bold text-slate-900 mb-2"><i class="fas fa-pencil-alt text-cyan-600 mr-2"></i> Practice 1: Choose the Correct Form</h3>
+                <p class="text-slate-600 text-sm mb-4">Read each sentence. Click <strong>will</strong> or <strong>going to</strong> — think about the situation!</p>
+                <div id="grammar-mc" class="space-y-3"></div>
+            </div>
+
+            <div class="glass-panel p-6 rounded-3xl border border-slate-200 mb-6 bg-white">
+                <h3 class="text-xl font-bold text-slate-900 mb-2"><i class="fas fa-pencil-alt text-cyan-600 mr-2"></i> Practice 2: Complete the Sentences</h3>
+                <p class="text-slate-600 text-sm mb-4">Type the correct form of the verb in brackets. Use <strong>will</strong> or <strong>going to</strong>.</p>
+                <div id="grammar-fill" class="space-y-3"></div>
+                <div class="mt-4 text-center">
+                    <button onclick="checkGrammarFill()" class="bg-cyan-600 hover:bg-cyan-500 text-white font-bold px-6 py-2 rounded-lg transition-colors text-sm"><i class="fas fa-check mr-2"></i> Check Answers</button>
+                    <span id="grammar-fill-score" class="ml-3 text-slate-500 text-sm font-bold"></span>
+                </div>
+            </div>
+
+            <!-- PAIR WORK ACTIVITY -->
+            <div class="glass-panel p-6 rounded-3xl border border-purple-300 mb-6 bg-gradient-to-br from-purple-50 to-white">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-purple-600 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl">👥</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-purple-700">Pair Work: Online Practice</h3>
+                        <p class="text-sm text-slate-500">Practice will vs going to with your partner</p>
+                    </div>
+                </div>
+
+                <p class="text-slate-700 text-sm mb-4"><strong>Instructions:</strong></p>
+                <ol class="space-y-2 text-sm text-slate-700 mb-4 list-decimal pl-6">
+                    <li>Find a partner (or work with the person next to you).</li>
+                    <li>Click the button below to open the online activity.</li>
+                    <li>Read each sentence <strong>aloud</strong> together, then choose the correct answer.</li>
+                    <li>Discuss with your partner <strong>why</strong> you chose that answer.</li>
+                    <li>Complete all the questions. There are no wrong answers — only discussions!</li>
+                </ol>
+
+                <div class="text-center mb-4">
+                    <a href="https://d2nl0uv689hai9.cloudfront.net/Verb+Tenses/Future+Tense/Future+tense+-+will+vs+going+to+ce1+(Published)/index.html?key=r7Kp3vX" target="_blank" class="inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-black text-base px-8 py-3 rounded-full shadow-lg transition-transform hover:scale-105">
+                        <i class="fas fa-external-link-alt mr-2"></i> Open Online Activity
+                    </a>
+                </div>
+
+                <div class="bg-white/70 rounded-xl p-4 border border-purple-200">
+                    <p class="text-xs text-slate-600"><i class="fas fa-lightbulb text-amber-500 mr-1"></i> <strong>Tip:</strong> If you disagree with your partner, explain your thinking — that's when real learning happens!</p>
+                </div>
+            </div>
+
+            <div class="transition-box">
+                <i class="fas fa-arrow-right"></i>
+                <p><strong>Next up:</strong> You'll write about your own future plans and predictions using <em>will</em> and <em>going to</em>. <strong>Why:</strong> Writing helps you organize your ideas and use the grammar in a meaningful way.</p>
+            </div>
+
+            <div class="flex justify-between items-center mt-6 glass-panel px-6 py-4 rounded-xl border border-slate-200 bg-white">
+                <button onclick="navTo('warmup')" class="text-slate-500 hover:text-slate-900 transition-colors"><i class="fas fa-arrow-left mr-2"></i> Back</button>
+                <button onclick="navTo('writing')" class="bg-cyan-600 hover:bg-cyan-500 text-white px-6 py-2 rounded-lg font-bold transition-colors">Next: Writing <i class="fas fa-arrow-right ml-2"></i></button>
+            </div>
+        </section>
+
+        <!-- ============ WRITING ============ -->
+        <section id="writing" class="app-section max-w-4xl mx-auto w-full section-hidden">
+            <div class="text-center mb-6 mt-4">
+                <h2 class="text-4xl font-black text-slate-900 mb-2 tracking-wide"><i class="fas fa-pen-fancy text-cyan-600"></i> Writing: My Future Plans</h2>
+                <p class="text-slate-500">Answer the Q10 questions about your future.</p>
+            </div>
+
+            <div class="transition-box">
+                <i class="fas fa-arrow-right"></i>
+                <p><strong>What you're about to do:</strong> You'll answer 5 questions about your future using <em>will</em> and <em>going to</em>. First, I'll show you a <strong>model example</strong>, then you'll write your own.<br><strong>Why:</strong> Writing gives you time to think about the grammar and use it correctly before our speaking activity.</p>
+            </div>
+
+            <!-- MODEL / SIMULATION -->
+            <div class="glass-panel p-6 rounded-3xl border border-purple-200 mb-6 bg-white">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-purple-600 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl">📖</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-purple-700">Model: How to Answer the Questions</h3>
+                        <p class="text-sm text-slate-500">Study this example before writing your own</p>
+                    </div>
+                </div>
+
+                <p class="text-sm text-slate-600 mb-4 italic">Below is a sample student's answers about their future. Notice how they mix <strong>will</strong> and <strong>going to</strong> depending on the situation.</p>
+
+                <!-- Q1 -->
+                <div class="question-card">
+                    <p class="mb-2"><span class="q-num">Q1</span><strong>What are your plans for next summer?</strong></p>
+                    <div class="model-answer">
+                        <p><strong>Sample answer:</strong> "Next summer, I<strong>'m going to visit</strong> my grandparents in the countryside. We<strong>'re going to stay</strong> there for two weeks. I think it<strong>'ll be</strong> really fun because we always have a good time together."</p>
+                        <p class="text-xs text-slate-500 mt-2">💡 <strong>Why this works:</strong> Uses <em>going to</em> for plans already decided, and <em>will</em> for a prediction (opinion).</p>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="question-card">
+                    <p class="mb-2"><span class="q-num">Q2</span><strong>What do you think life will be like in 20 years?</strong></p>
+                    <div class="model-answer">
+                        <p><strong>Sample answer:</strong> "In 20 years, I think cars <strong>will drive</strong> themselves and people <strong>will live</strong> longer. I hope I<strong>'ll have</strong> a good job and a happy family. Technology <strong>will probably change</strong> a lot!"</p>
+                        <p class="text-xs text-slate-500 mt-2">💡 <strong>Why this works:</strong> Uses <em>will</em> for predictions about the future — opinions and beliefs, not plans.</p>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="question-card">
+                    <p class="mb-2"><span class="q-num">Q3</span><strong>What are you going to do this weekend?</strong></p>
+                    <div class="model-answer">
+                        <p><strong>Sample answer:</strong> "This weekend, I<strong>'m going to study</strong> for my English test on Friday. On Saturday, my friends and I <strong>are going to watch</strong> a movie. I<strong>'ll probably sleep</strong> a lot too!"</p>
+                        <p class="text-xs text-slate-500 mt-2">💡 <strong>Why this works:</strong> Uses <em>going to</em> for already-decided plans, and <em>will + probably</em> for something not fully decided.</p>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="question-card">
+                    <p class="mb-2"><span class="q-num">Q4</span><strong>What career do you want to have?</strong></p>
+                    <div class="model-answer">
+                        <p><strong>Sample answer:</strong> "I<strong>'m going to be</strong> a graphic designer. I<strong>'ve already started</strong> learning design on YouTube. I<strong>'ll take</strong> some art classes next year to get better. I hope I<strong>'ll work</strong> for a big company one day."</p>
+                        <p class="text-xs text-slate-500 mt-2">💡 <strong>Why this works:</strong> Uses <em>going to</em> for a clear intention, and <em>will</em> for a future hope/prediction.</p>
+                    </div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="question-card">
+                    <p class="mb-2"><span class="q-num">Q5</span><strong>Where do you want to travel in the future?</strong></p>
+                    <div class="model-answer">
+                        <p><strong>Sample answer:</strong> "I really want to travel to Japan. I<strong>'m going to save</strong> money for two years, and then I<strong>'m going to buy</strong> a plane ticket. I<strong>'ll probably visit</strong> Tokyo and Kyoto. I think the food <strong>will be</strong> amazing!"</p>
+                        <p class="text-xs text-slate-500 mt-2">💡 <strong>Why this works:</strong> Uses <em>going to</em> for planned steps, and <em>will</em> for personal predictions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WRITING TIPS -->
+            <div class="glass-panel p-6 rounded-3xl border border-amber-200 mb-6 bg-white">
+                <h3 class="text-xl font-bold text-amber-700 mb-3"><i class="fas fa-lightbulb mr-2"></i> Tips for Good Writing</h3>
+                <div class="tip-box">
+                    <p><strong>1. Mix the tenses!</strong> Don't use only <em>will</em> or only <em>going to</em>. Show you understand the difference.</p>
+                </div>
+                <div class="tip-box">
+                    <p><strong>2. Add reasons or details.</strong> Don't just say "I'll travel." Say "I'll travel to Japan <em>because I love Japanese culture</em>."</p>
+                </div>
+                <div class="tip-box">
+                    <p><strong>3. Use connecting words.</strong> Link your ideas with: <em>because, and, but, also, so, then, after that</em>.</p>
+                </div>
+                <div class="tip-box">
+                    <p><strong>4. Watch for common mistakes.</strong> ❌ "I will to go" → ✅ "I will go". ❌ "I'm go to travel" → ✅ "I'm going to travel".</p>
+                </div>
+                <div class="tip-box">
+                    <p><strong>5. Use adverbs for accuracy.</strong> Add <em>probably, definitely, maybe</em> to show how sure you are: "I'll <em>probably</em> visit..." / "I'll <em>definitely</em> try..."</p>
+                </div>
+            </div>
+
+            <!-- HELP PHRASES -->
+            <div class="glass-panel p-6 rounded-3xl border border-cyan-200 mb-6 bg-white">
+                <h3 class="text-xl font-bold text-cyan-700 mb-3"><i class="fas fa-toolbox mr-2"></i> Help Phrases You Can Use</h3>
+
+                <p class="text-xs font-bold text-cyan-600 uppercase tracking-wider mb-2">For plans & intentions (going to)</p>
+                <div class="mb-4">
+                    <span class="help-phrase">I'm going to...</span>
+                    <span class="help-phrase">We're planning to...</span>
+                    <span class="help-phrase">I've decided to...</span>
+                    <span class="help-phrase">My plan is to...</span>
+                    <span class="help-phrase">I'm thinking of...</span>
+                </div>
+
+                <p class="text-xs font-bold text-pink-600 uppercase tracking-wider mb-2">For predictions & hopes (will)</p>
+                <div class="mb-4">
+                    <span class="help-phrase">I think I'll...</span>
+                    <span class="help-phrase">I hope I'll...</span>
+                    <span class="help-phrase">I'll probably...</span>
+                    <span class="help-phrase">Maybe I'll...</span>
+                    <span class="help-phrase">I'm sure I'll...</span>
+                </div>
+
+                <p class="text-xs font-bold text-purple-600 uppercase tracking-wider mb-2">For adding reasons & details</p>
+                <div>
+                    <span class="help-phrase">...because...</span>
+                    <span class="help-phrase">...so I can...</span>
+                    <span class="help-phrase">...which means...</span>
+                    <span class="help-phrase">For example,...</span>
+                    <span class="help-phrase">Also,...</span>
+                </div>
+            </div>
+
+            <!-- STUDENT WRITING AREA -->
+            <div class="glass-panel p-6 rounded-3xl border border-slate-200 bg-white mb-6">
+                <h3 class="text-xl font-bold text-slate-900 mb-3"><i class="fas fa-pen mr-2 text-cyan-600"></i>Your Turn: Write Your Answers</h3>
+                <p class="text-sm text-slate-500 mb-4">Answer the 5 questions with 2–3 sentences each. Use <em>will</em> and <em>going to</em>, and add reasons or details.</p>
+
+                <div class="space-y-4">
+                    <div>
+                        <label class="text-sm font-bold text-slate-700 block mb-1">Q1. What are your plans for next summer?</label>
+                        <textarea rows="3" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-slate-800 text-sm outline-none focus:border-cyan-500 resize-y" placeholder="Next summer, I'm going to..."></textarea>
+                    </div>
+                    <div>
+                        <label class="text-sm font-bold text-slate-700 block mb-1">Q2. What do you think life will be like in 20 years?</label>
+                        <textarea rows="3" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-slate-800 text-sm outline-none focus:border-cyan-500 resize-y" placeholder="In 20 years, I think..."></textarea>
+                    </div>
+                    <div>
+                        <label class="text-sm font-bold text-slate-700 block mb-1">Q3. What are you going to do this weekend?</label>
+                        <textarea rows="3" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-slate-800 text-sm outline-none focus:border-cyan-500 resize-y" placeholder="This weekend, I'm going to..."></textarea>
+                    </div>
+                    <div>
+                        <label class="text-sm font-bold text-slate-700 block mb-1">Q4. What career do you want to have?</label>
+                        <textarea rows="3" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-slate-800 text-sm outline-none focus:border-cyan-500 resize-y" placeholder="I'm going to be..."></textarea>
+                    </div>
+                    <div>
+                        <label class="text-sm font-bold text-slate-700 block mb-1">Q5. Where do you want to travel in the future?</label>
+                        <textarea rows="3" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-slate-800 text-sm outline-none focus:border-cyan-500 resize-y" placeholder="I really want to travel to..."></textarea>
+                    </div>
+                </div>
+
+                <div class="mt-4 text-center">
+                    <button onclick="finishWriting()" class="bg-cyan-600 hover:bg-cyan-500 text-white font-bold px-6 py-2 rounded-lg transition-colors text-sm"><i class="fas fa-check mr-2"></i> I'm Done Writing!</button>
+                </div>
+            </div>
+
+            <div class="transition-box">
+                <i class="fas fa-arrow-right"></i>
+                <p><strong>Next up:</strong> An individual listening test. <strong>Why:</strong> This will check your ability to understand spoken English — a key skill for exams and real life.</p>
+            </div>
+
+            <div class="flex justify-between items-center mt-6 glass-panel px-6 py-4 rounded-xl border border-slate-200 bg-white">
+                <button onclick="navTo('grammar')" class="text-slate-500 hover:text-slate-900 transition-colors"><i class="fas fa-arrow-left mr-2"></i> Back</button>
+                <button onclick="navTo('listening')" class="bg-cyan-600 hover:bg-cyan-500 text-white px-6 py-2 rounded-lg font-bold transition-colors">Next: Listening Test <i class="fas fa-arrow-right ml-2"></i></button>
+            </div>
+        </section>
+
+        <!-- ============ LISTENING TEST ============ -->
+        <section id="listening" class="app-section max-w-4xl mx-auto w-full section-hidden">
+            <div class="text-center mb-6 mt-4">
+                <h2 class="text-4xl font-black text-slate-900 mb-2 tracking-wide"><i class="fas fa-headphones text-cyan-600"></i> Listening Test</h2>
+                <p class="text-slate-500">An individual test — no talking, just listening!</p>
+            </div>
+
+            <div class="transition-box">
+                <i class="fas fa-arrow-right"></i>
+                <p><strong>What you're about to do:</strong> Complete a listening test <strong>on your own</strong>. Listen to the audio, answer the questions, and submit your worksheet with your name.<br><strong>Why:</strong> This is an assessment — it shows how much you understand and helps your teacher see what to work on next.</p>
+            </div>
+
+            <!-- TIPS FOR GOOD LISTENING -->
+            <div class="glass-panel p-6 rounded-3xl border border-amber-200 mb-6 bg-white">
+                <h3 class="text-xl font-bold text-amber-700 mb-3"><i class="fas fa-lightbulb mr-2"></i> Tips for Good Listening</h3>
+
+                <div class="tip-box">
+                    <p><strong>1. Read the questions first.</strong> Before the audio starts, read every question. This tells your brain what to listen for.</p>
+                </div>
+                <div class="tip-box">
+                    <p><strong>2. Predict the type of answer.</strong> Is it a number? A name? A place? A time? Knowing this helps you focus.</p>
+                </div>
+                <div class="tip-box">
+                    <p><strong>3. Listen for keywords, not every word.</strong> You don't need to understand everything — just the important information.</p>
+                </div>
+                <div class="tip-box">
+                    <p><strong>4. Don't panic if you miss something.</strong> Skip it and move to the next question. You can come back if the audio repeats.</p>
+                </div>
+                <div class="tip-box">
+                    <p><strong>5. Watch out for distractors.</strong> Sometimes the speaker mentions a wrong answer first, then corrects it. Listen for words like <em>actually, but, no wait</em>.</p>
+                </div>
+                <div class="tip-box">
+                    <p><strong>6. Check your spelling.</strong> Names, numbers, and days of the week must be written correctly.</p>
+                </div>
+            </div>
+
+            <!-- IMPORTANT: WRITE YOUR NAME -->
+            <div class="glass-panel p-5 rounded-2xl border-2 border-rose-300 bg-rose-50 mb-6">
+                <div class="flex items-start gap-3">
+                    <i class="fas fa-exclamation-triangle text-rose-500 text-2xl mt-1"></i>
+                    <div>
+                        <h4 class="font-bold text-rose-700 mb-1">Important: Write Your Full Name!</h4>
+                        <p class="text-sm text-rose-600">Before you start, make sure you write your <strong>full name</strong> on the worksheet. The teacher needs to know whose test this is!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- THE ACTIVITY -->
+            <div class="glass-panel p-6 rounded-3xl border border-cyan-200 mb-6 bg-white">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-cyan-600 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl">🎯</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Listening Test Worksheet</h3>
+                        <p class="text-sm text-slate-500">Listen to the audio · Answer the questions · Submit with your name</p>
+                    </div>
+                </div>
+
+                <p class="text-slate-700 text-sm mb-4"><strong>Instructions:</strong></p>
+                <ol class="space-y-2 text-sm text-slate-700 mb-5 list-decimal pl-6">
+                    <li>Click the button below to open the worksheet.</li>
+                    <li>Write your <strong>full name</strong> at the top.</li>
+                    <li>Listen to the audio carefully. You can listen <strong>twice</strong>.</li>
+                    <li>Answer every question.</li>
+                    <li>Click <strong>Finish</strong> to submit your worksheet. The teacher will see your answers.</li>
+                </ol>
+
+                <div class="text-center">
+                    <a href="https://www.liveworksheets.com/c?a=s&g=teen+6&s=class+7&t=87fm3i0reh&no=no-send&mn=dz&m=d&sr=y&im=n&l=fy&i=ucncfto&r=mg&f=dzdxuzzd&ms=uz&cd=p63ev0o2srwlj-prlnngnileixklkezjvbngnmxggnxg&mw=hs" target="_blank" class="inline-block bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-black text-lg px-8 py-4 rounded-full shadow-lg transition-transform hover:scale-105">
+                        <i class="fas fa-external-link-alt mr-2"></i> Open Listening Test
+                    </a>
+                </div>
+
+                <div class="mt-5 bg-cyan-50 p-4 rounded-xl border border-cyan-200">
+                    <p class="text-xs text-slate-600"><i class="fas fa-clock text-cyan-600 mr-1"></i> <strong>Time:</strong> About 15 minutes. Take your time — there's no rush.</p>
+                </div>
+            </div>
+
+            <!-- WHILE YOU WAIT -->
+            <div class="glass-panel p-5 rounded-2xl border border-slate-200 bg-white">
+                <h3 class="text-lg font-bold text-slate-700 mb-2"><i class="fas fa-book-reader mr-2"></i>Finished Early?</h3>
+                <p class="text-sm text-slate-600">If you finish before your classmates, review the grammar cards from the earlier section, or start thinking about your dream trip for the speaking activity!</p>
+            </div>
+
+            <div class="transition-box mt-6">
+                <i class="fas fa-arrow-right"></i>
+                <p><strong>Next up:</strong> The Speaking section — you'll plan your dream trip with a partner. <strong>Why:</strong> Now it's time to <em>use</em> everything you've learned in a real conversation!</p>
+            </div>
+
+            <div class="flex justify-between items-center mt-6 glass-panel px-6 py-4 rounded-xl border border-slate-200 bg-white">
+                <button onclick="navTo('writing')" class="text-slate-500 hover:text-slate-900 transition-colors"><i class="fas fa-arrow-left mr-2"></i> Back</button>
+                <button onclick="navTo('speaking')" class="bg-cyan-600 hover:bg-cyan-500 text-white px-6 py-2 rounded-lg font-bold transition-colors">Next: Speaking <i class="fas fa-arrow-right ml-2"></i></button>
+            </div>
+        </section>
+
+        <!-- ============ SPEAKING (FROM CLASS 6) ============ -->
+        <section id="speaking" class="app-section max-w-4xl mx-auto w-full section-hidden">
+            <div class="text-center mb-6 mt-4">
+                <h2 class="text-4xl font-black text-slate-900 mb-2 tracking-wide"><i class="fas fa-microphone text-cyan-600"></i> Speaking: Plan Your Dream Trip</h2>
+                <p class="text-slate-500">Work with a partner to plan an amazing trip — using future tenses and travel vocabulary!</p>
+            </div>
+
+            <div class="transition-box">
+                <i class="fas fa-arrow-right"></i>
+                <p><strong>What you're about to do:</strong> In pairs, you'll plan a 1-week dream trip — choosing a destination, transportation, dates, and activities. Then you'll present it to the class.<br><strong>Why:</strong> This brings together EVERYTHING from today: travel vocabulary, phrasal verbs, future tenses, and present tenses with future meaning. It's your chance to actually <em>use</em> the language, not just study it.</p>
+            </div>
+
+            <!-- Speaking prep prompts -->
+            <div class="glass-panel p-6 rounded-3xl border border-cyan-200 mb-6 bg-white">
+                <h3 class="text-xl font-bold text-cyan-700 mb-3"><i class="fas fa-tasks mr-2"></i> Step 1: Prepare Your Trip (5 min)</h3>
+                <p class="text-slate-600 text-sm mb-4">Decide these things with your partner. Write short notes — you'll present them in a moment!</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                    <div class="bg-cyan-50 p-4 rounded-xl border-l-4 border-cyan-400">
+                        <p class="text-cyan-700 font-bold text-xs mb-2">🌍 Destination</p>
+                        <p class="text-slate-600 text-xs mb-2">Where are you going? Why?</p>
+                        <input type="text" class="w-full bg-white border border-slate-300 rounded px-3 py-2 text-slate-800 text-sm outline-none focus:border-cyan-500" placeholder="We're going to..." />
+                    </div>
+                    <div class="bg-pink-50 p-4 rounded-xl border-l-4 border-pink-400">
+                        <p class="text-pink-700 font-bold text-xs mb-2">✈️ Transportation</p>
+                        <p class="text-slate-600 text-xs mb-2">How will you get there? Use: <em>by + transport, take off, set off</em></p>
+                        <input type="text" class="w-full bg-white border border-slate-300 rounded px-3 py-2 text-slate-800 text-sm outline-none focus:border-pink-500" placeholder="We're flying / going by..." />
+                    </div>
+                    <div class="bg-amber-50 p-4 rounded-xl border-l-4 border-amber-400">
+                        <p class="text-amber-700 font-bold text-xs mb-2">📅 Dates & Times</p>
+                        <p class="text-slate-600 text-xs mb-2">When do you leave? Use <strong>simple present</strong> for schedules!</p>
+                        <input type="text" class="w-full bg-white border border-slate-300 rounded px-3 py-2 text-slate-800 text-sm outline-none focus:border-amber-500" placeholder="Our plane leaves at..." />
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-xl border-l-4 border-purple-400">
+                        <p class="text-purple-700 font-bold text-xs mb-2">🎒 Activities</p>
+                        <p class="text-slate-600 text-xs mb-2">What will you do there? Use <em>going to, will, might</em></p>
+                        <input type="text" class="w-full bg-white border border-slate-300 rounded px-3 py-2 text-slate-800 text-sm outline-none focus:border-purple-500" placeholder="We're going to... / We might..." />
+                    </div>
+                    <div class="bg-emerald-50 p-4 rounded-xl border-l-4 border-emerald-400 md:col-span-2">
+                        <p class="text-emerald-700 font-bold text-xs mb-2">💭 Bonus: One Surprise</p>
+                        <p class="text-slate-600 text-xs mb-2">Add one thing that is <strong>possible but not certain</strong> (use <em>might</em>).</p>
+                        <input type="text" class="w-full bg-white border border-slate-300 rounded px-3 py-2 text-slate-800 text-sm outline-none focus:border-emerald-500" placeholder="We might also..." />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Useful phrases box -->
+            <div class="glass-panel p-6 rounded-3xl border border-emerald-200 mb-6 bg-white">
+                <h3 class="text-xl font-bold text-emerald-700 mb-3"><i class="fas fa-toolbox mr-2"></i> Useful Phrases for Your Presentation</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
+                    <div class="bg-emerald-50 p-3 rounded-lg">
+                        <p class="text-emerald-700 font-bold text-xs mb-2">✈️ Plans (going to):</p>
+                        <ul class="text-slate-600 text-xs space-y-1">
+                            <li>• We're going to visit...</li>
+                            <li>• We're going to stay for...</li>
+                            <li>• We're going to travel by...</li>
+                        </ul>
+                    </div>
+                    <div class="bg-cyan-50 p-3 rounded-lg">
+                        <p class="text-cyan-700 font-bold text-xs mb-2">📅 Schedules (present):</p>
+                        <ul class="text-slate-600 text-xs space-y-1">
+                            <li>• Our plane leaves at...</li>
+                            <li>• The train arrives at...</li>
+                            <li>• We're meeting at...</li>
+                        </ul>
+                    </div>
+                    <div class="bg-amber-50 p-3 rounded-lg">
+                        <p class="text-amber-700 font-bold text-xs mb-2">🤔 Possibilities (might):</p>
+                        <ul class="text-slate-600 text-xs space-y-1">
+                            <li>• We might also...</li>
+                            <li>• We might not have time to...</li>
+                            <li>• If we're lucky, we'll...</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Presentation Timer -->
+            <div class="glass-panel p-6 rounded-3xl border border-slate-200 mb-6 bg-white text-center">
+                <h3 class="text-xl font-bold text-slate-900 mb-2">⏱️ Presentation Timer</h3>
+                <p class="text-slate-500 text-sm mb-4">Each pair has 2 minutes to present their trip to the class!</p>
+                <div id="speak-timer" class="text-7xl font-black text-cyan-600 font-mono mb-4">2:00</div>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <button onclick="startSpeakTimer()" id="speak-start-btn" class="bg-cyan-600 hover:bg-cyan-500 text-white font-bold px-6 py-2 rounded-lg transition-colors"><i class="fas fa-play mr-2"></i> Start Timer</button>
+                    <button onclick="resetSpeakTimer()" class="bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold px-6 py-2 rounded-lg transition-colors"><i class="fas fa-redo mr-2"></i> Reset</button>
+                </div>
+            </div>
+
+            <!-- Peer feedback -->
+            <div class="glass-panel p-6 rounded-3xl border border-amber-200 bg-white">
+                <h3 class="text-xl font-bold text-amber-700 mb-3"><i class="fas fa-comments mr-2"></i> Peer Feedback</h3>
+                <p class="text-slate-600 text-sm mb-3">After each pair presents, give them quick feedback. Be kind and specific!</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                    <div class="bg-slate-50 p-3 rounded-lg">
+                        <p class="text-slate-700 text-sm mb-2">👍 One thing they did well:</p>
+                        <input type="text" class="w-full bg-white border border-slate-300 rounded px-3 py-2 text-slate-800 text-sm outline-none focus:border-amber-500" placeholder="e.g., They used 'might' perfectly..." />
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-lg">
+                        <p class="text-slate-700 text-sm mb-2">💡 One idea to improve:</p>
+                        <input type="text" class="w-full bg-white border border-slate-300 rounded px-3 py-2 text-slate-800 text-sm outline-none focus:border-amber-500" placeholder="e.g., Speak a little louder next time..." />
+                    </div>
+                </div>
+            </div>
+
+            <div class="transition-box">
+                <i class="fas fa-arrow-right"></i>
+                <p><strong>Next up:</strong> The Games Zone — three fun activities — Taboo, Bingo, and Story Dice. <strong>Why:</strong> You've worked hard today. Time to relax, play, and use English in a fun way!</p>
+            </div>
+
+            <div class="flex justify-between items-center mt-6 glass-panel px-6 py-4 rounded-xl border border-slate-200 bg-white">
+                <button onclick="navTo('listening')" class="text-slate-500 hover:text-slate-900 transition-colors"><i class="fas fa-arrow-left mr-2"></i> Back</button>
+                <button onclick="navTo('games')" class="bg-pink-600 hover:bg-pink-500 text-white px-6 py-2 rounded-lg font-bold transition-colors">🎲 Next: Games <i class="fas fa-arrow-right ml-2"></i></button>
+            </div>
+        </section>
+
+        <!-- ============ GAMES ZONE (FROM CLASS 6) ============ -->
+        <section id="games" class="app-section max-w-5xl mx-auto w-full section-hidden">
+            <div class="text-center mb-6 mt-4">
+                <h2 class="text-4xl font-black text-slate-900 mb-2 tracking-wide"><i class="fas fa-dice text-pink-600"></i> Games Zone</h2>
+                <p class="text-slate-500">Three fun games to wrap up the class!</p>
+            </div>
+
+            <div class="transition-box">
+                <i class="fas fa-arrow-right"></i>
+                <p><strong>What you're about to do:</strong> Play three different travel games — Taboo (describe without saying), Bingo (find and mark), and Story Dice (invent a story).<br><strong>Why:</strong> These games use the vocabulary and grammar you've practiced today, but in a fun, low-pressure way. Enjoy!</p>
+            </div>
+
+            <!-- ===== GAME 1: TRAVEL TABOO ===== -->
+            <div class="glass-panel p-6 rounded-3xl border border-cyan-200 mb-8 relative bg-white">
+                <div class="absolute top-0 right-0 bg-cyan-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg flex items-center gap-1 z-10"><i class="fas fa-comment-slash"></i> Game 1</div>
+                <h3 class="text-2xl font-bold text-cyan-700 mb-2">🚫 Travel Taboo</h3>
+                <p class="text-slate-600 text-sm mb-4">One student describes the target word WITHOUT using the forbidden words! The team has 60 seconds to guess.</p>
+
+                <div class="taboo-card max-w-md mx-auto mb-4">
+                    <p class="text-xs text-cyan-600 font-bold uppercase tracking-widest text-center mb-2">Describe this word</p>
+                    <div id="taboo-word" class="taboo-word mb-4">TICKET</div>
+                    <p class="text-xs text-center text-slate-400 mb-2">🚫 FORBIDDEN WORDS:</p>
+                    <div id="taboo-forbidden" class="text-center">
+                        <span class="taboo-forbidden">plane</span>
+                        <span class="taboo-forbidden">buy</span>
+                        <span class="taboo-forbidden">travel</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-center gap-3">
+                    <button onclick="newTabooCard()" class="bg-cyan-600 hover:bg-cyan-500 text-white px-5 py-2 rounded-lg font-bold transition-colors"><i class="fas fa-random mr-2"></i> New Card</button>
+                    <button onclick="startTabooTimer()" id="taboo-start-btn" class="bg-pink-600 hover:bg-pink-500 text-white px-5 py-2 rounded-lg font-bold transition-colors"><i class="fas fa-play mr-2"></i> Start 60s Timer</button>
+                    <span id="taboo-timer" class="text-3xl font-black text-cyan-700 font-mono">60</span>
+                </div>
+                <p class="text-slate-400 text-xs mt-3 text-center"><i class="fas fa-lightbulb text-amber-500 mr-1"></i> Teacher: Split the class into two teams. One student from Team A describes; Team A guesses. Then switch to Team B.</p>
+            </div>
+
+            <!-- ===== GAME 2: TRAVEL BINGO ===== -->
+            <div class="glass-panel p-6 rounded-3xl border border-amber-200 mb-8 relative bg-white">
+                <div class="absolute top-0 right-0 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg flex items-center gap-1 z-10"><i class="fas fa-th"></i> Game 2</div>
+                <h3 class="text-2xl font-bold text-amber-700 mb-2">🎱 Travel Bingo</h3>
+                <p class="text-slate-600 text-sm mb-4">Click each cell when you hear a clue that matches! Get 3 in a row (horizontal, vertical, or diagonal) to win!</p>
+
+                <div id="bingo-board" class="grid grid-cols-3 gap-2 max-w-2xl mx-auto mb-4"></div>
+
+                <div class="flex flex-wrap items-center justify-center gap-3 mb-3">
+                    <button onclick="newBingoBoard()" class="bg-amber-500 hover:bg-amber-400 text-white px-5 py-2 rounded-lg font-bold transition-colors"><i class="fas fa-random mr-2"></i> New Board</button>
+                    <button onclick="resetBingoMarks()" class="bg-slate-200 hover:bg-slate-300 text-slate-800 px-5 py-2 rounded-lg font-bold transition-colors"><i class="fas fa-eraser mr-2"></i> Clear Marks</button>
+                    <button onclick="showBingoToggle()" id="bingo-toggle-btn" class="bg-cyan-600 hover:bg-cyan-500 text-white px-5 py-2 rounded-lg font-bold transition-colors"><i class="fas fa-list mr-2"></i> Show Clues</button>
+                </div>
+
+                <div id="bingo-clue-list" class="hidden bg-slate-50 p-4 rounded-xl border border-slate-200 max-w-2xl mx-auto">
+                    <p class="text-xs text-slate-500 font-bold uppercase tracking-wider mb-2">📋 Clue List (for teacher)</p>
+                    <ul id="bingo-clues" class="grid grid-cols-1 md:grid-cols-2 gap-1 text-xs text-slate-600"></ul>
+                </div>
+            </div>
+
+            <!-- ===== GAME 3: STORY DICE ===== -->
+            <div class="glass-panel p-6 rounded-3xl border border-purple-200 mb-8 relative bg-white">
+                <div class="absolute top-0 right-0 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg flex items-center gap-1 z-10"><i class="fas fa-dice-d20"></i> Game 3</div>
+                <h3 class="text-2xl font-bold text-purple-700 mb-2">🎲 Story Dice: Travel Edition</h3>
+                <p class="text-slate-600 text-sm mb-4">Roll the dice to get random travel elements. Then make up a short story in 60 seconds using ALL of them!</p>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+                    <div class="story-die">
+                        <p class="die-label">🧑 Who</p>
+                        <p class="die-value" id="die-who">—</p>
+                    </div>
+                    <div class="story-die">
+                        <p class="die-label">📍 Where</p>
+                        <p class="die-value" id="die-where">—</p>
+                    </div>
+                    <div class="story-die">
+                        <p class="die-label">✈️ How</p>
+                        <p class="die-value" id="die-how">—</p>
+                    </div>
+                    <div class="story-die">
+                        <p class="die-label">🎯 Problem</p>
+                        <p class="die-value" id="die-what">—</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-center gap-3 mb-3">
+                    <button onclick="rollStoryDice()" class="bg-purple-600 hover:bg-purple-500 text-white px-6 py-3 rounded-lg font-bold transition-colors text-lg"><i class="fas fa-dice mr-2"></i> Roll the Dice!</button>
+                    <button onclick="startStoryTimer()" id="story-start-btn" class="bg-pink-600 hover:bg-pink-500 text-white px-5 py-2 rounded-lg font-bold transition-colors"><i class="fas fa-play mr-2"></i> Start 60s Story Timer</button>
+                    <span id="story-timer" class="text-3xl font-black text-purple-700 font-mono">60</span>
+                </div>
+
+                <p class="text-slate-400 text-xs mt-3 text-center"><i class="fas fa-lightbulb text-amber-500 mr-1"></i> Teacher: Roll the dice, then give a student 60 seconds to invent a story using all 4 elements. Bonus points for using future tenses!</p>
+            </div>
+
+            <div class="flex justify-between items-center mt-6 glass-panel px-6 py-4 rounded-xl border border-slate-200 bg-white">
+                <button onclick="navTo('speaking')" class="text-slate-500 hover:text-slate-900 transition-colors"><i class="fas fa-arrow-left mr-2"></i> Back to Speaking</button>
+                <button onclick="triggerFlashAndEnd()" class="bg-gradient-to-r from-cyan-600 to-pink-600 hover:from-cyan-500 hover:to-pink-500 text-white font-black px-8 py-3 rounded-full shadow-[0_4px_20px_rgba(6,182,212,0.4)] transition-transform hover:scale-105"><i class="fas fa-check-circle mr-2"></i> FINISH CLASS!</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL -->
+    <div id="custom-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center px-4">
+        <div class="bg-white border-2 border-cyan-500 rounded-2xl p-6 max-w-lg w-full text-center shadow-2xl" id="modal-content">
+            <h3 id="modal-title" class="text-2xl font-bold text-slate-900 mb-2"></h3>
+            <div id="modal-message" class="text-slate-700 mb-6 text-lg"></div>
+            <button onclick="closeModal()" class="bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-3 px-8 rounded-lg w-full text-lg shadow-md transition-colors">Got it!</button>
+        </div>
+    </div>
+
+    <script>
+        // ========== NAVIGATION ==========
+        function navTo(sectionId) {
+            document.querySelectorAll('.app-section').forEach(sec => { sec.classList.remove('section-enter'); sec.classList.add('section-hidden'); });
+            const target = document.getElementById(sectionId);
+            if (target) { target.classList.remove('section-hidden'); setTimeout(() => target.classList.add('section-enter'), 10); }
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                if (btn.dataset.target === sectionId) { btn.classList.remove('text-slate-600', 'hover:text-slate-900', 'hover:bg-slate-200'); btn.classList.add('bg-cyan-600', 'text-white'); }
+                else { btn.classList.add('text-slate-600', 'hover:text-slate-900', 'hover:bg-slate-200'); btn.classList.remove('bg-cyan-600', 'text-white'); }
+            });
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) mobileMenu.classList.add('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
+
+        // ========== MODAL ==========
+        function showModal(title, message, type = 'info') {
+            const modal = document.getElementById('custom-modal');
+            if (!modal) return;
+            document.getElementById('modal-title').innerHTML = title;
+            document.getElementById('modal-message').innerHTML = message;
+            const content = document.getElementById('modal-content');
+            if (type === 'error') content.className = 'bg-white border-2 border-red-500 rounded-2xl p-6 max-w-lg w-full text-center shadow-2xl';
+            else if (type === 'success') content.className = 'bg-white border-2 border-emerald-500 rounded-2xl p-6 max-w-lg w-full text-center shadow-2xl';
+            else content.className = 'bg-white border-2 border-cyan-500 rounded-2xl p-6 max-w-lg w-full text-center shadow-2xl';
+            modal.classList.remove('hidden');
+        }
+        function closeModal() { document.getElementById('custom-modal').classList.add('hidden'); }
+
+        // ========== GRAMMAR EXERCISES ==========
+        // Multiple choice: will or going to
+        const grammarMC = [
+            { text: 'The phone is ringing! — Don\'t worry, I ___ it.', options: ['will get', 'am going to get'], answer: 'will get', hint: 'Instant decision (at the moment of speaking).' },
+            { text: 'Look at those dark clouds! It ___ rain.', options: ['will', 'is going to'], answer: 'is going to', hint: 'Prediction based on evidence (we can see the clouds).' },
+            { text: 'I ___ visit my grandmother next weekend. I already bought the ticket.', options: ['will', 'am going to'], answer: 'am going to', hint: 'Plan already decided and organized.' },
+            { text: 'I think our team ___ win the championship.', options: ['will', 'is going to'], answer: 'will', hint: 'Prediction based on opinion/belief.' },
+            { text: 'We ___ have a party on Saturday. Everyone is invited!', options: ['will', 'are going to'], answer: 'are going to', hint: 'Arrangement already made.' },
+            { text: 'I promise I ___ help you with your homework.', options: ['will', 'am going to'], answer: 'will', hint: 'Promise.' }
+        ];
+
+        function renderGrammarMC() {
+            const container = document.getElementById('grammar-mc');
+            if (!container) return;
+            container.innerHTML = '';
+            grammarMC.forEach((q, i) => {
+                const div = document.createElement('div');
+                div.className = 'bg-slate-50 p-4 rounded-xl border border-slate-200';
+                div.innerHTML = `
+                    <p class="text-sm text-slate-700 mb-3"><strong>${i + 1}.</strong> ${q.text}</p>
+                    <div class="flex flex-wrap gap-2 mb-2" id="mc-opts-${i}">
+                        ${q.options.map(opt => `<button class="mc-option rounded-lg px-4 py-2 text-sm font-bold text-slate-700" onclick="selectGrammarMC(${i}, '${opt.replace(/'/g, "\\'")}', this)">${opt}</button>`).join('')}
+                    </div>
+                    <p class="text-xs text-amber-600 hidden" id="mc-hint-${i}"><i class="fas fa-lightbulb mr-1"></i>${q.hint}</p>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function selectGrammarMC(idx, choice, btn) {
+            const q = grammarMC[idx];
+            const parent = btn.parentElement;
+            parent.querySelectorAll('.mc-option').forEach(b => {
+                b.disabled = true;
+                if (b.textContent.trim() === q.answer) b.classList.add('correct');
+                else if (b === btn) b.classList.add('wrong');
+            });
+            document.getElementById(`mc-hint-${idx}`).classList.remove('hidden');
+            if (choice === q.answer && typeof confetti === 'function') {
+                confetti({ particleCount: 12, spread: 30, origin: { y: 0.6 } });
+            }
+        }
+
+        // Fill in the blanks
+        const grammarFill = [
+            { before: 'I', after: 'visit my cousins next month. I already booked the flight.', verb: '(go to / visit)', answer: 'am going to' },
+            { before: 'Don\'t worry about the bill — I', after: 'pay for dinner.', verb: '(will / pay)', answer: 'will' },
+            { before: 'Look! The cat', after: 'jump on the table!', verb: '(be going to / jump)', answer: 'is going to' },
+            { before: 'I think it', after: 'snow tomorrow.', verb: '(will / snow)', answer: 'will' },
+            { before: 'We', after: 'meet at 6 PM. It\'s all arranged.', verb: '(be going to / meet)', answer: 'are going to' }
+        ];
+
+        function renderGrammarFill() {
+            const c = document.getElementById('grammar-fill');
+            if (!c) return;
+            c.innerHTML = '';
+            grammarFill.forEach((g, i) => {
+                const div = document.createElement('div');
+                div.className = 'bg-slate-50 p-3 rounded-lg flex flex-wrap items-center gap-2';
+                div.innerHTML = `
+                    <span class="text-sm text-slate-700">${i + 1}. ${g.before}</span>
+                    <input type="text" class="fill-blank" id="gfill-${i}" placeholder="${g.verb}" style="min-width:130px" />
+                    <span class="text-sm text-slate-700">${g.after}</span>
+                    <span id="gfill-fb-${i}" class="text-xs ml-auto"></span>
+                `;
+                c.appendChild(div);
+            });
+        }
+
+        function checkGrammarFill() {
+            let correct = 0;
+            grammarFill.forEach((g, i) => {
+                const inp = document.getElementById(`gfill-${i}`);
+                const fb = document.getElementById(`gfill-fb-${i}`);
+                const val = inp.value.toLowerCase().trim();
+                const ans = g.answer.toLowerCase();
+                if (val === ans || val.includes(ans)) {
+                    inp.classList.add('correct'); inp.classList.remove('wrong');
+                    fb.textContent = '✅'; correct++;
+                } else {
+                    inp.classList.add('wrong'); inp.classList.remove('correct');
+                    fb.textContent = '❌ ' + g.answer;
+                }
+            });
+            document.getElementById('grammar-fill-score').textContent = `${correct}/${grammarFill.length}`;
+            if (correct === grammarFill.length) {
+                if (typeof confetti === 'function') confetti({ particleCount: 80, spread: 80, origin: { y: 0.4 } });
+                showModal('🎉 Perfect!', 'All future forms correct! You really understand will vs going to.', 'success');
+            }
+        }
+
+        // ========== WRITING ==========
+        function finishWriting() {
+            if (typeof confetti === 'function') confetti({ particleCount: 80, spread: 80, origin: { y: 0.5 } });
+            showModal('✍️ Great Writing!', 'Fantastic work! Now get ready for the individual listening test.', 'success');
+        }
+
+        // ========== SPEAKING (FROM CLASS 6) ==========
+        let speakTimer = null; let speakTime = 120; let speakRunning = false;
+        function startSpeakTimer() {
+            if (speakRunning) return;
+            if (speakTime <= 0) speakTime = 120;
+            speakRunning = true;
+            document.getElementById('speak-start-btn').innerHTML = '<i class="fas fa-pause mr-2"></i> Pause';
+            const el = document.getElementById('speak-timer');
+            el.classList.add('timer-pulse');
+            speakTimer = setInterval(() => {
+                speakTime--;
+                const m = Math.floor(speakTime / 60); const s = speakTime % 60;
+                el.textContent = `${m}:${s.toString().padStart(2, '0')}`;
+                if (speakTime <= 20) el.classList.add('timer-warning');
+                if (speakTime <= 0) { clearInterval(speakTimer); speakRunning = false; el.textContent = '0:00'; el.classList.remove('timer-pulse', 'timer-warning'); document.getElementById('speak-start-btn').innerHTML = '<i class="fas fa-play mr-2"></i> Start Timer'; showModal('⏰ Time\'s Up!', 'Great presentation! Who wants to go next?', 'info'); }
+            }, 1000);
+        }
+        function resetSpeakTimer() {
+            clearInterval(speakTimer); speakRunning = false; speakTime = 120;
+            const el = document.getElementById('speak-timer');
+            el.textContent = '2:00'; el.classList.remove('timer-pulse', 'timer-warning');
+            document.getElementById('speak-start-btn').innerHTML = '<i class="fas fa-play mr-2"></i> Start Timer';
+        }
+
+        // ========== GAMES (FROM CLASS 6) ==========
+        // --- TRAVEL TABOO ---
+        const tabooCards = [
+            { word: 'TICKET', forbidden: ['plane', 'buy', 'travel'] },
+            { word: 'AIRPORT', forbidden: ['plane', 'fly', 'terminal'] },
+            { word: 'HOTEL', forbidden: ['room', 'sleep', 'bed'] },
+            { word: 'SUITCASE', forbidden: ['pack', 'clothes', 'travel'] },
+            { word: 'PASSPORT', forbidden: ['country', 'identity', 'border'] },
+            { word: 'FERRY', forbidden: ['boat', 'water', 'cross'] },
+            { word: 'CAMERA', forbidden: ['photo', 'picture', 'take'] },
+            { word: 'GUIDEBOOK', forbidden: ['travel', 'read', 'place'] },
+            { word: 'MAP', forbidden: ['place', 'find', 'paper'] },
+            { word: 'BACKPACK', forbidden: ['carry', 'school', 'shoulders'] },
+            { word: 'BEACH', forbidden: ['sand', 'sea', 'sun'] },
+            { word: 'MOUNTAIN', forbidden: ['climb', 'high', 'rock'] },
+            { word: 'PHOTO', forbidden: ['take', 'camera', 'picture'] },
+            { word: 'SOUVENIR', forbidden: ['buy', 'gift', 'remember'] },
+            { word: 'JOURNEY', forbidden: ['travel', 'trip', 'go'] }
+        ];
+        let tabooIndex = 0;
+        let tabooTimer = null;
+        let tabooTimeLeft = 60;
+
+        function newTabooCard() {
+            tabooIndex = Math.floor(Math.random() * tabooCards.length);
+            const card = tabooCards[tabooIndex];
+            document.getElementById('taboo-word').textContent = card.word;
+            document.getElementById('taboo-forbidden').innerHTML = card.forbidden.map(f => `<span class="taboo-forbidden">${f}</span>`).join('');
+            if (typeof confetti === 'function') confetti({ particleCount: 15, spread: 30, origin: { y: 0.5 } });
+        }
+
+        function startTabooTimer() {
+            if (tabooTimer) clearInterval(tabooTimer);
+            tabooTimeLeft = 60;
+            document.getElementById('taboo-timer').textContent = '60';
+            document.getElementById('taboo-timer').classList.remove('timer-warning');
+            document.getElementById('taboo-start-btn').innerHTML = '<i class="fas fa-stop mr-2"></i> Stop';
+            tabooTimer = setInterval(() => {
+                tabooTimeLeft--;
+                document.getElementById('taboo-timer').textContent = tabooTimeLeft;
+                if (tabooTimeLeft <= 10) document.getElementById('taboo-timer').classList.add('timer-warning');
+                if (tabooTimeLeft <= 0) {
+                    clearInterval(tabooTimer);
+                    tabooTimer = null;
+                    document.getElementById('taboo-start-btn').innerHTML = '<i class="fas fa-play mr-2"></i> Start 60s Timer';
+                    document.getElementById('taboo-timer').classList.remove('timer-warning');
+                    showModal('⏰ Time\'s Up!', 'Did they guess it? Click "New Card" for the next word!', 'info');
+                    if (typeof confetti === 'function') confetti({ particleCount: 40, spread: 60, origin: { y: 0.5 } });
+                }
+            }, 1000);
+        }
+
+        // --- TRAVEL BINGO ---
+        const bingoItems = [
+            { term: 'PASSPORT', clue: 'This little book proves who you are when you cross borders.' },
+            { term: 'SUITCASE', clue: 'You pack your clothes and things in this for a trip.' },
+            { term: 'AIRPORT', clue: 'Planes take off and land here.' },
+            { term: 'TICKET', clue: 'You need this to get on a plane, train, or bus.' },
+            { term: 'HOTEL', clue: 'You sleep here when you travel.' },
+            { term: 'MAP', clue: 'This shows you where places are.' },
+            { term: 'CAMERA', clue: 'You use this to take photos.' },
+            { term: 'BEACH', clue: 'Sand, sun, and ocean — this is a place to relax.' },
+            { term: 'MOUNTAIN', clue: 'A very tall landform you can hike or climb.' },
+            { term: 'SOUVENIR', clue: 'A small gift or object you buy to remember a trip.' }
+        ];
+        let bingoMarked = [];
+
+        function newBingoBoard() {
+            const board = document.getElementById('bingo-board');
+            board.innerHTML = '';
+            const shuffled = [...bingoItems].sort(() => Math.random() - 0.5).slice(0, 9);
+            window._currentBingo = shuffled;
+            bingoMarked = new Array(9).fill(false);
+            shuffled.forEach((item, idx) => {
+                const cell = document.createElement('div');
+                cell.className = 'bingo-cell';
+                cell.textContent = item.term;
+                cell.dataset.idx = idx;
+                cell.onclick = () => toggleBingoCell(cell);
+                board.appendChild(cell);
+            });
+            const clueList = document.getElementById('bingo-clues');
+            clueList.innerHTML = shuffled.map((item, idx) => `<li>${idx + 1}. ${item.clue}</li>`).join('');
+        }
+
+        function toggleBingoCell(cell) {
+            const idx = parseInt(cell.dataset.idx);
+            bingoMarked[idx] = !bingoMarked[idx];
+            cell.classList.toggle('marked');
+            checkBingoWin();
+        }
+
+        function checkBingoWin() {
+            const lines = [
+                [0,1,2],[3,4,5],[6,7,8],
+                [0,3,6],[1,4,7],[2,5,8],
+                [0,4,8],[2,4,6]
+            ];
+            for (const line of lines) {
+                if (line.every(i => bingoMarked[i])) {
+                    if (typeof confetti === 'function') confetti({ particleCount: 150, spread: 100, origin: { y: 0.5 } });
+                    showModal('🎉 BINGO!', 'Someone got 3 in a row! Great job!', 'success');
+                    return;
+                }
+            }
+        }
+
+        function resetBingoMarks() {
+            document.querySelectorAll('.bingo-cell').forEach(cell => cell.classList.remove('marked'));
+            bingoMarked = new Array(9).fill(false);
+        }
+
+        function showBingoToggle() {
+            const el = document.getElementById('bingo-clue-list');
+            const btn = document.getElementById('bingo-toggle-btn');
+            if (el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+                btn.innerHTML = '<i class="fas fa-eye-slash mr-2"></i> Hide Clues';
+            } else {
+                el.classList.add('hidden');
+                btn.innerHTML = '<i class="fas fa-list mr-2"></i> Show Clues';
+            }
+        }
+
+        // --- STORY DICE ---
+        const storyElements = {
+            who: ['A lost tourist', 'A brave teenager', 'An old sailor', 'A curious child', 'A famous photographer', 'A hungry backpacker', 'A nervous pilot', 'A street artist'],
+            where: ['on a deserted island', 'in the middle of Tokyo', 'at the top of a mountain', 'in a tiny Italian village', 'on a night train through Europe', 'deep in the Amazon jungle', 'at a busy airport', 'under the sea'],
+            how: ['by hot air balloon', 'on a rusty bicycle', 'by an old ferry', 'on foot', 'by a mysterious train', 'on the back of a camel', 'by a small plane', 'with a magical map'],
+            what: ['lost their passport', 'missed the last flight', 'found a hidden treasure', 'made a new best friend', 'got caught in a storm', 'discovered a secret door', 'dropped their phone in the ocean', 'couldn\'t find their hotel']
+        };
+        let storyTimer = null;
+        let storyTimeLeft = 60;
+
+        function rollStoryDice() {
+            document.getElementById('die-who').textContent = storyElements.who[Math.floor(Math.random() * storyElements.who.length)];
+            document.getElementById('die-where').textContent = storyElements.where[Math.floor(Math.random() * storyElements.where.length)];
+            document.getElementById('die-how').textContent = storyElements.how[Math.floor(Math.random() * storyElements.how.length)];
+            document.getElementById('die-what').textContent = storyElements.what[Math.floor(Math.random() * storyElements.what.length)];
+            if (typeof confetti === 'function') confetti({ particleCount: 25, spread: 50, origin: { y: 0.5 } });
+        }
+
+        function startStoryTimer() {
+            if (storyTimer) clearInterval(storyTimer);
+            storyTimeLeft = 60;
+            document.getElementById('story-timer').textContent = '60';
+            document.getElementById('story-timer').classList.remove('timer-warning');
+            document.getElementById('story-start-btn').innerHTML = '<i class="fas fa-stop mr-2"></i> Stop';
+            storyTimer = setInterval(() => {
+                storyTimeLeft--;
+                document.getElementById('story-timer').textContent = storyTimeLeft;
+                if (storyTimeLeft <= 10) document.getElementById('story-timer').classList.add('timer-warning');
+                if (storyTimeLeft <= 0) {
+                    clearInterval(storyTimer);
+                    storyTimer = null;
+                    document.getElementById('story-start-btn').innerHTML = '<i class="fas fa-play mr-2"></i> Start 60s Story Timer';
+                    document.getElementById('story-timer').classList.remove('timer-warning');
+                    showModal('⏰ Time\'s Up!', 'Great story! Who wants to share theirs with the class?', 'info');
+                    if (typeof confetti === 'function') confetti({ particleCount: 40, spread: 60, origin: { y: 0.5 } });
+                }
+            }, 1000);
+        }
+
+        // ========== WRAP UP ==========
+        function triggerFlashAndEnd() {
+            const flash = document.createElement('div');
+            flash.className = 'fixed inset-0 bg-white z-[100] transition-opacity duration-1000';
+            flash.style.opacity = '1'; document.body.appendChild(flash);
+            setTimeout(() => {
+                flash.style.opacity = '0';
+                setTimeout(() => {
+                    flash.remove();
+                    showModal('🎉 Class Complete!', 'Amazing work today! You practiced will vs going to, wrote about your future, completed a listening test, and played games. See you next class! 🚀', 'success');
+                    if (typeof confetti === 'function') confetti({ particleCount: 150, spread: 100, origin: { y: 0.5 } });
+                }, 1000);
+            }, 100);
+        }
+
+        // ========== INIT ==========
+        document.addEventListener('DOMContentLoaded', function() {
+            renderGrammarMC();
+            renderGrammarFill();
+            newBingoBoard();
+            newTabooCard();
+            document.getElementById('die-who').textContent = '—';
+            document.getElementById('die-where').textContent = '—';
+            document.getElementById('die-how').textContent = '—';
+            document.getElementById('die-what').textContent = '—';
+        });
+    </script>
+</body>
+</html>
